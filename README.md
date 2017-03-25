@@ -1,2 +1,2 @@
-# GPlayDevelopment
-Adil &amp; Pavan's App Repo
+# Discord Bot Development
+Adil &amp; Ethan's Discord Chat Bot
