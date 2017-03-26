@@ -8,6 +8,8 @@ import listeners.MessageListener;
 import Command.*;
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -19,16 +21,20 @@ public class AugmentBot {
         DiscordAPI api = Javacord.getApi(new Scanner(new File("C:\\Users\\Adil\\Desktop\\credentials.txt")).nextLine(), true);
         api.connectBlocking();
         api.setAutoReconnect(true);
+        DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+        Date dateobj = new Date();
+        api.setGame(df.format(dateobj).split(" ")[1]);
         api.registerListener(new MessageListener());
         commands.put("help", new HelpCommand());
         commands.put("add", new AddCommand());
         commands.put("ping", new PingCommand());
+        commands.put("choose", new ChooseCommand());
     }
 
     public static void handleCommand(CommandContainer cmd) {
-        if(commands.containsKey(cmd.getInvoke())) {
-            if(commands.get(cmd.getInvoke()).called(cmd.getArgs(), cmd.getAPI(), cmd.getMessage())) {
-                commands.get(cmd.getInvoke()).action(cmd.getArgs(), cmd.getAPI(), cmd.getMessage());
+        if(commands.containsKey(cmd.getInvoke().toLowerCase())) {
+            if(commands.get(cmd.getInvoke().toLowerCase()).called(cmd.getArgs(), cmd.getAPI(), cmd.getMessage())) {
+                commands.get(cmd.getInvoke().toLowerCase()).action(cmd.getArgs(), cmd.getAPI(), cmd.getMessage());
             }
         } else {
             cmd.getMessage().reply("Command not found. Use the help menu to see a list of available commands");
