@@ -35,6 +35,8 @@ public class AugmentBot {
         if(commands.containsKey(cmd.getInvoke().toLowerCase())) {
             if(commands.get(cmd.getInvoke().toLowerCase()).called(cmd.getArgs(), cmd.getAPI(), cmd.getMessage())) {
                 commands.get(cmd.getInvoke().toLowerCase()).action(cmd.getArgs(), cmd.getAPI(), cmd.getMessage());
+            } else {
+                commands.get(cmd.getInvoke().toLowerCase()).executed(false, cmd.getAPI(), cmd.getMessage());
             }
         } else {
             cmd.getMessage().reply("Command not found. Use the help menu to see a list of available commands");

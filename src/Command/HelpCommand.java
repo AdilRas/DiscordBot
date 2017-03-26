@@ -13,7 +13,7 @@ import java.util.TreeMap;
  */
 public class HelpCommand implements Command{
     //TODO - Finish help command after creating rest of commands
-    public static final String HELPTEXT = "**USAGE:**\t!help\t\t**DESC:**\tReturns a list of commands available through this bot.";
+    public static final String HELPTEXT = "Help:\tUSAGE:\t!help\t\tDESC:\tReturns a list of commands available through this bot.";
     @Override
     public boolean called(String[] args, DiscordAPI api, Message message) {
         return true;
@@ -22,13 +22,13 @@ public class HelpCommand implements Command{
     @Override
     public void action(String[] args, DiscordAPI api, Message message) {
         StringBuilder sb = new StringBuilder();
-        sb.append("Your Best Friend\n");
+        sb.append("***Your Best Friend***\n```\n");
         TreeMap<String, Command> commandTreeMap = AugmentBot.getCommandMap();
         Set<Map.Entry<String, Command>> entrySet = commandTreeMap.entrySet();
         for(Map.Entry<String, Command> entry : entrySet) {
             sb.append(entry.getValue().help() + "\n");
         }
-        sb.append("");
+        sb.append("```");
         message.reply(sb.toString());
     }
 
