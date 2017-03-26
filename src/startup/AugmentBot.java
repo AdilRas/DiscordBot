@@ -23,12 +23,13 @@ public class AugmentBot {
         api.setAutoReconnect(true);
         DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
         Date dateobj = new Date();
-        api.setGame(df.format(dateobj).split(" ")[1]);
+        api.setGame(df.format(dateobj));
         api.registerListener(new MessageListener());
         commands.put("help", new HelpCommand());
         commands.put("add", new AddCommand());
         commands.put("ping", new PingCommand());
         commands.put("choose", new ChooseCommand());
+        commands.put("spam", new SpamCommand());
     }
 
     public static void handleCommand(CommandContainer cmd) {
