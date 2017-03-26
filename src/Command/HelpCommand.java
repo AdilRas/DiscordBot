@@ -13,7 +13,7 @@ import java.util.TreeMap;
  */
 public class HelpCommand implements Command{
     //TODO - Finish help command after creating rest of commands
-    public static final String HELPTEXT = "!help\tReturns a list of commands available through this bot.";
+    public static final String HELPTEXT = "***!help***:\t\tReturns a list of commands available through this bot.";
     @Override
     public boolean called(String[] args, DiscordAPI api, Message message) {
         return true;

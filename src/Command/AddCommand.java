@@ -7,7 +7,7 @@ import de.btobastian.javacord.entities.message.Message;
  * Created by Adil on 3/25/2017.
  */
 public class AddCommand implements Command {
-    private final static String HELPTEXT = "!add x y\tReturns the sum of two numbers. <Ex: \"!add 3 4\" would return 7>";
+    private final static String HELPTEXT = "***!add x y***:\t\tReturns the sum of two numbers. <Ex: \"!add 3 4\" would return 7>";
     @Override
     public boolean called(String[] args, DiscordAPI api, Message message) {
         boolean possibleOperation = false;

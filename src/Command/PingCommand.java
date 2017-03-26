@@ -7,7 +7,7 @@ import de.btobastian.javacord.entities.message.Message;
  * Created by Adil on 3/25/2017.
  */
 public class PingCommand implements Command {
-    private static final String HELPTEXT = "!ping\tClassic Ping command. <Ex: !ping>";
+    private static final String HELPTEXT = "***!ping***:\t\tClassic Ping command. <Ex: !ping>";
     @Override
     public boolean called(String[] args, DiscordAPI api, Message message) {
         return true;
