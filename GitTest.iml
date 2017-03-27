@@ -16,5 +16,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="javacord-2.0.14-shaded" level="project" />
   </component>
 </module>
