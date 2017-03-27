@@ -12,7 +12,7 @@ import startup.AugmentBot;
 /**
  * Created by Adil on 3/25/2017.
  */
-public class MessageListener implements MessageCreateListener{
+public class MessageListener implements MessageCreateListener {
 
 
     @Override
