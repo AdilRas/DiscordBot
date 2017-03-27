@@ -10,7 +10,7 @@ import de.btobastian.javacord.entities.message.Message;
 public interface Command {
 
     public boolean called(String[] args, DiscordAPI api, Message message);
-    public void action(String[] args, DiscordAPI api, Message message);
+    public void action(String[] args, DiscordAPI api, Message message) throws InterruptedException;
     public String help();
     public void executed(boolean success, DiscordAPI api, Message message);
 

@@ -34,12 +34,21 @@ public class SpamCommand implements Command {
     }
 
     @Override
-    public void action(String[] args, DiscordAPI api, Message message) {
+    public void action(String[] args, DiscordAPI api, Message message) throws InterruptedException{
         StringBuilder sb = new StringBuilder();
         for(int i = 1; i < args.length; i++)
             sb.append(args[i] + " ");
-        for(int i = Integer.parseInt(args[0]); i > 0; i--) {
-            message.reply(sb.toString());
+        if(Integer.parseInt(args[0]) < 6) {
+            for(int i = Integer.parseInt(args[0]); i > 0; i--) {
+                message.reply(sb.toString());
+            }
+        } else {
+
+            for(int i = 0; i < Integer.parseInt(args[0]); i++) {
+                if((i+1)%5 == 0)
+                    Thread.sleep(3500);
+                message.reply(sb.toString());
+            }
         }
     }
 

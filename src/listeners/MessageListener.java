@@ -17,9 +17,13 @@ public class MessageListener implements MessageCreateListener{
 
     @Override
     public void onMessageCreate(DiscordAPI discordAPI, Message message) {
-        if(!(message.getAuthor().getName().equals("startup.AugmentBot")) && message.getContent().startsWith("!") && message.getContent().length() > 1) {
-            AugmentBot.handleCommand(CommandParser.parse(discordAPI, message, message.getContent()));
+        try {
+            if (!(message.getAuthor().getName().equals("startup.AugmentBot")) && message.getContent().startsWith("!") && message.getContent().length() > 1) {
+                AugmentBot.handleCommand(CommandParser.parse(discordAPI, message, message.getContent()));
 
+            }
+        } catch (InterruptedException ie) {
+            ie.printStackTrace();
         }
 
     }

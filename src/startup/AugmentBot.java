@@ -35,7 +35,7 @@ public class AugmentBot {
         commands.put("randomdec", new RandomDecimalCommand());
     }
 
-    public static void handleCommand(CommandContainer cmd) {
+    public static void handleCommand(CommandContainer cmd) throws InterruptedException{
         if(commands.containsKey(cmd.getInvoke().toLowerCase())) {
             if(commands.get(cmd.getInvoke().toLowerCase()).called(cmd.getArgs(), cmd.getAPI(), cmd.getMessage())) {
                 commands.get(cmd.getInvoke().toLowerCase()).action(cmd.getArgs(), cmd.getAPI(), cmd.getMessage());
