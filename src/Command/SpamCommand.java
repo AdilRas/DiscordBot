@@ -35,8 +35,11 @@ public class SpamCommand implements Command {
 
     @Override
     public void action(String[] args, DiscordAPI api, Message message) {
+        StringBuilder sb = new StringBuilder();
+        for(int i = 1; i < args.length; i++)
+            sb.append(args[i] + " ");
         for(int i = Integer.parseInt(args[0]); i > 0; i--) {
-            message.reply(args[1]);
+            message.reply(sb.toString());
         }
     }
 

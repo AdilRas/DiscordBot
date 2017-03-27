@@ -30,6 +30,9 @@ public class AugmentBot {
         commands.put("ping", new PingCommand());
         commands.put("choose", new ChooseCommand());
         commands.put("spam", new SpamCommand());
+        commands.put("math", new MathCommand());
+        commands.put("random", new RandomCommand());
+        commands.put("randomdec", new RandomDecimalCommand());
     }
 
     public static void handleCommand(CommandContainer cmd) {
