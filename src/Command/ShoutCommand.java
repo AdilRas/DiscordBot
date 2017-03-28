@@ -21,11 +21,11 @@ public class ShoutCommand implements Command {
     public void action(String[] args, DiscordAPI api, Message message) throws InterruptedException {
         StringBuilder sb = new StringBuilder();
         for(String s : args) {
-            sb.append(s);
+            sb.append(s + " ");
         }
         MessageBuilder mb = new MessageBuilder();
         mb.append(sb.toString());
-        (message.getUserReceiver()).sendMessage(sb.toString(), true);
+        (message.getReceiver()).sendMessage(sb.toString(), true);
 
     }
 

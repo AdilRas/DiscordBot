@@ -17,5 +17,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="javacord-2.0.14-shaded" level="project" />
+    <orderEntry type="library" name="commons-io-2.5" level="project" />
+    <orderEntry type="library" name="commons-io-2.5-javadoc" level="project" />
   </component>
 </module>

@@ -18,7 +18,7 @@ import java.util.*;
 public class AugmentBot {
     private static TreeMap<String, Command> commands = new TreeMap<String, Command>();
     public AugmentBot() throws IOException {
-        DiscordAPI api = Javacord.getApi(new Scanner(new File("C:\\Users\\Adil\\Desktop\\credentials.txt")).nextLine(), true);
+        DiscordAPI api = Javacord.getApi(new Scanner(new File(/*"C:\\Users\\Adil\\Desktop\\credentials.txt"*/"C:\\Users\\726115\\Desktop\\credentials.txt")).nextLine(), true);
         api.connectBlocking();
         api.setAutoReconnect(true);
         DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
