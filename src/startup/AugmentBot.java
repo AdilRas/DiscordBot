@@ -34,6 +34,7 @@ public class AugmentBot {
         commands.put("random", new RandomCommand());
         commands.put("randomdec", new RandomDecimalCommand());
         commands.put("shout", new ShoutCommand());
+        commands.put("person", new PersonCommand());
     }
 
     public static void handleCommand(CommandContainer cmd) throws InterruptedException{

@@ -29,7 +29,7 @@ public class PersonCommand implements Command {
 
     @Override
     public boolean called(String[] args, DiscordAPI api, Message message) {
-        if(args.length == 0)
+        if(args.length >= 1)
             return true;
         return false;
     }
@@ -38,7 +38,8 @@ public class PersonCommand implements Command {
     public void action(String[] args, DiscordAPI api, Message message) throws InterruptedException {
         try{
             int id = Integer.parseInt(args[0]);
-            FileUtils.copyURLToFile(new URL("https://skystorage.iscorp.com/pictures/tx/fortbend//0"+ id + ".JPG"), new File("temporary.JPG"));
+            //FileUtils.copyURLToFile(new URL("https://skystorage.iscorp.com/pictures/tx/fortbend//0"+ id + ".JPG"), new File("temporary.JPG"));
+            message.reply("https://skystorage.iscorp.com/pictures/tx/fortbend//0" + id + ".JPG");
         } catch (NumberFormatException nfe) {
             if(knownPeople.containsKey(message.getContent().toLowerCase())) {
                 try {
@@ -48,10 +49,8 @@ public class PersonCommand implements Command {
                     e.printStackTrace();
                 }
             }
-        } catch (MalformedURLException mfe) {
+        } catch (Exception mfe) {
             mfe.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
         }
     }
 
